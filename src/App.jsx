@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Outlet, Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
+import { LangProvider } from "./context/LanguageContext";
 
 function App() {
   console.log("App");
   return (
     <>
-      <Navbar />
-
-      <Outlet />
+      <LangProvider>
+        <Navbar />
+        <Outlet />
+      </LangProvider>
     </>
   );
 }
